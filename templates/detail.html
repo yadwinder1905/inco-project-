@@ -1,0 +1,81 @@
+<!-- templates/detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/detail.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Patient Details</h1>
+    </header>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>{{ patient["FirstName"] }} {{ patient["LastName"] }}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{ patient["Address"] }}</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>{{ patient["Gender"] }}</td>
+            </tr>
+            <tr>
+                <td>Ward</td>
+                <td>{{ patient["Ward"] }}</td>
+            </tr>
+            <tr>
+                <td>Room No</td>
+                <td>{{ patient["RoomNo"] }}</td>
+            </tr>
+            <tr>
+                <td>Ward Code</td>
+                <td>{{ patient["WardCode"] }}</td>
+            </tr>
+            <tr>
+                <td>Prescribed</td>
+                <td>{{ patient["Prescribed"] }}</td>
+            </tr>
+            <tr>
+                <td>Medication 1</td>
+                <td>{{ patient["Medication1"] }}</td>
+            </tr>
+            <tr>
+                <td>Medication 2</td>
+                <td>{{ patient["Medication2"] }}</td>
+            </tr>
+            <tr>
+                <td>Medication 3</td>
+                <td>{{ patient["Medication3"] }}</td>
+            </tr>
+            <tr>
+                <td>Given</td>
+                <td>{{ patient["Given"] }}</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>{{ patient["Status"] }}</td>
+            </tr>
+            <tr>
+                <td>Percentage</td>
+                <td>{{ patient["Percentage"] }}</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+    <button onclick="window.location='/'">Back to Patient List</button>
+
+
+</body>
+
+</html>

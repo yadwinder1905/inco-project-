@@ -1,0 +1,58 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <title>Patient Data</title>
+    <style>
+        input[type="text"] {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Patient Data</h1>
+    </header>
+
+    <!-- Search Bar Form -->
+    <form action="/" method="get">
+        <label for="patientId">Search by Patient ID:</label>
+        <input type="text" id="patientId" name="patientId" placeholder="Enter Patient ID">
+        <input type="submit" value="Search">
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in data %}
+            <tr>
+                <td>{{ entry["PatientID"] }}</td>
+
+                <td><a href="/patient/{{ entry['PatientID'] }}">View Details</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
